@@ -39,6 +39,10 @@ app.get("/", function(req, res) {
     } else {
       if (posts.length === 0) {
         console.log("posts is empty");
+        res.render("home.ejs", {
+          startingContent: homeStartingContent,
+          posts: posts
+        });
       } else {
         res.render("home.ejs", {
           startingContent: homeStartingContent,
